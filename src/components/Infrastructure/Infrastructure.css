@@ -1,0 +1,159 @@
+.infra {
+  background: var(--bg-light);
+  color: var(--text-dark);
+  padding: 4rem 1rem;
+  display: flex;
+  justify-content: center;
+  overflow-x: hidden;
+}
+
+.infra-inner {
+  max-width: 1200px;
+  width: 100%;
+  text-align: center;
+}
+
+.infra-inner h2 {
+  color: var(--primary);
+  font-size: 1.9rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.infra-sub {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 2.5rem;
+}
+
+/* ---------- GRID LAYOUT ---------- */
+.infra-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  align-items: center;
+  justify-items: center;
+}
+
+/* ---------- 4‑IMAGE COLLAGE BLOCKS ---------- */
+.infra-images {
+  display: grid;
+  grid-template-areas:
+    "img1 img2"
+    "img3 img4";
+  gap: 1rem;
+  width: 100%;
+  justify-items: center;
+}
+
+.infra-images img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* assign each image area + variation in size */
+.infra-images img:nth-child(1) {
+  grid-area: img1;
+}
+.infra-images img:nth-child(2) {
+  grid-area: img2;
+  height: 240px;             /* a bit taller – highlight image */
+}
+.infra-images img:nth-child(3) {
+  grid-area: img3;
+}
+.infra-images img:nth-child(4) {
+  grid-area: img4;
+  height: 180px;
+}
+
+.infra-images img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+  z-index: 2;
+}
+
+/* ---------- FEATURE LIST ---------- */
+.infra-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.9rem;
+}
+
+.infra-list li {
+  font-size: 1rem;
+  color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  line-height: 1.6;
+  transition: transform 0.3s ease;
+}
+
+/* slide pop effect */
+.infra-list li:hover {
+  transform: translateY(-5px) scale(1.05);
+}
+
+.infra-icon {
+  color: var(--accent);
+  margin-right: 0.6rem;
+  font-size: 1.1rem;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 900px) {
+  .infra-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .infra-images {
+    grid-template-areas:
+      "img1"
+      "img2"
+      "img3"
+      "img4";
+  }
+
+  .infra-images img {
+    width: 100%;
+    height: 180px;
+  }
+
+  .infra-list {
+    align-items: center;
+    text-align: center;
+  }
+
+  .infra-list li {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 500px) {
+  .infra {
+    padding: 3rem 0.8rem;
+  }
+
+  .infra-inner h2 {
+    font-size: 1.6rem;
+  }
+
+  .infra-images img {
+    height: 160px;
+  }
+
+  .infra-list li {
+    font-size: 0.95rem;
+  }
+}

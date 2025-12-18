@@ -1,0 +1,127 @@
+.services {
+  background: var(--bg-light);
+  color: var(--text-dark);
+  padding: 3.5rem 1rem;              /* smaller height */
+  display: flex;
+  justify-content: center;
+  overflow-x: hidden;
+}
+
+.services-inner {
+  max-width: 1100px;
+  text-align: center;
+  width: 100%;
+}
+
+/* ---------- HEADINGS ---------- */
+.services h2 {
+  color: var(--primary);
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+}
+
+.services-sub {
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 2rem;
+}
+
+/* ---------- GRID LAYOUT ---------- */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);   /* fixed 3 columns desktop */
+  gap: 2rem 2.5rem;
+  justify-items: center;
+  align-items: start;
+}
+
+/* ---------- EACH SERVICE (no box) ---------- */
+.service-item {
+  width: 100%;
+  max-width: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.3s ease;
+  word-wrap: break-word;
+  white-space: normal;
+}
+
+.service-item:hover {
+  transform: translateY(-5px) scale(1.03); /* small pop only */
+}
+
+/* ICON */
+.service-icon {
+  font-size: 2.2rem;
+  color: var(--accent);
+  margin-bottom: 1rem;
+  transition: transform 0.5s ease;
+}
+
+.service-item:hover .service-icon {
+  transform: rotate(15deg) scale(1.1);
+}
+
+/* TITLE */
+.service-item h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--primary);
+}
+
+/* DESCRIPTION */
+.service-item p {
+  font-size: 0.95rem;
+  color: #444;
+  line-height: 1.6;
+  margin: 0;
+  max-width: 90%;
+  word-break: break-word;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 1024px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on tablet */
+  }
+}
+
+@media (max-width: 700px) {
+  .services {
+    padding: 3rem 1rem;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr; /* 1 column on mobile */
+  }
+
+  .service-item {
+    max-width: 280px;
+  }
+
+  .service-icon {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .services h2 {
+    font-size: 1.6rem;
+  }
+
+  .services-sub {
+    font-size: 0.9rem;
+  }
+
+  .service-item h3 {
+    font-size: 1rem;
+  }
+
+  .service-item p {
+    font-size: 0.9rem;
+  }
+}

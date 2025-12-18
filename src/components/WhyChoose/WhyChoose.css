@@ -1,0 +1,135 @@
+.why {
+  background: var(--primary);
+  color: #fff;
+  padding: 3rem 1rem;              /* 🔹 reduced vertical space */
+  display: flex;
+  justify-content: center;
+  overflow-x: hidden;
+}
+
+.why-inner {
+  max-width: 1100px;               /* slightly narrower for compact view */
+  text-align: center;
+  width: 100%;
+}
+
+.why h2 {
+  font-size: 1.8rem;               /* 🔹 smaller heading */
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+}
+
+.why-sub {
+  font-size: 0.95rem;              /* 🔹 smaller subtitle */
+  color: #e6e6e6;
+  margin-bottom: 2rem;             /* less gap below subtitle */
+}
+
+/* grid layout */
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.8rem;                     /* tighter spacing */
+  justify-items: center;
+  align-items: stretch;
+}
+
+/* single item area */
+.why-item {
+  width: 100%;
+  max-width: 250px;
+  min-height: 220px;               /* 🔹smaller cards */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 1.5rem 1rem;
+  text-align: center;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+  box-sizing: border-box;
+}
+
+.why-item:hover {
+  transform: translateY(-4px) scale(1.03);
+}
+
+/* icon area */
+.why-icon-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0.7rem;
+  min-height: 40px;
+}
+
+/* icon style and animation */
+.why-icon {
+  font-size: 2.1rem;               /* 🔹smaller icon */
+  color: var(--accent);
+  transition: transform 0.6s ease, filter 0.35s ease;
+}
+
+.why-item:hover .why-icon {
+  transform: rotate(360deg) scale(1.12);
+  filter: drop-shadow(0 0 10px rgba(245,130,32,0.6));
+}
+
+/* text styles */
+.why-item h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #fff;
+  min-height: 35px;
+}
+
+.why-item p {
+  font-size: 0.93rem;
+  color: #e0e0e0;
+  line-height: 1.5;
+  word-wrap: break-word;
+  white-space: normal;
+  margin: 0;
+  flex: 1;
+}
+
+/* Responsive tweaks */
+@media (max-width: 900px) {
+  .why {
+    padding: 2.5rem 1rem;
+  }
+  .why-inner {
+    max-width: 900px;
+  }
+  .why-grid {
+    gap: 1.5rem;
+  }
+  .why-item {
+    max-width: 230px;
+    min-height: 200px;
+    padding: 1.3rem 0.9rem;
+  }
+  .why-icon {
+    font-size: 1.9rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .why {
+    padding: 2.5rem 0.8rem;
+  }
+  .why-item {
+    max-width: 300px;
+    min-height: auto;
+  }
+  .why-icon {
+    font-size: 1.8rem;
+  }
+  .why h2 {
+    font-size: 1.6rem;
+  }
+  .why-sub {
+    font-size: 0.9rem;
+  }
+}
